@@ -1,75 +1,62 @@
 from launch import LaunchDescription
-from launch.actions import IncludeLaunchDescription, TimerAction
-from launch.launch_description_sources import PythonLaunchDescriptionSource
 from launch_ros.actions import Node
+from launch.actions import ExecuteProcess
 from ament_index_python.packages import get_package_share_directory
 import os
+import xacro
 
 
 def generate_launch_description():
 
-    pkg_ros_gz_sim = get_package_share_directory('ros_gz_sim')
-    pkg_igvc_desc = get_package_share_directory('igvc_description')
-    pkg_igvc_gazebo = get_package_share_directory('igvc_gazebo')
+    pkg_desc = get_package_share_directory('igvc_description')
+    urdf_file = os.path.join(pkg_desc, 'urdf', 'robot.xacro')
 
-    urdf_path = os.path.join(
-        pkg_igvc_desc,
-        'urdf',
-        'robot.xacro'
-    )
-
-    world_path = os.path.join(
-        pkg_igvc_gazebo,
-        'worlds',
-        'stable.world'
-    )
-
-    # 1️⃣ Robot State Publisher
-    robot_state_publisher = Node(
-        package='robot_state_publisher',
-        executable='robot_state_publisher',
-        name='robot_state_publisher',
-        parameters=[{
-            'robot_description': os.popen(f'xacro {urdf_path}').read()
-        }]
-    )
-
-    # 2️⃣ Start Gazebo Sim WITH explicit stable world
-    gazebo = IncludeLaunchDescription(
-        PythonLaunchDescriptionSource(
-            os.path.join(
-                pkg_ros_gz_sim,
-                'launch',
-                'gz_sim.launch.py'
-            )
-        ),
-        launch_arguments={
-            'gz_args': f'-r {world_path}'
-        }.items(),
-    )
-
-    # 3️⃣ Spawn robot AFTER Gazebo is ready
-    spawn_robot = Node(
-    package='ros_gz_sim',
-    executable='create',
-    arguments=[
-        '-world', 'default',          # 🔴 THIS WAS MISSING
-        '-name', 'igvc_bot',
-        '-topic', '/robot_description',
-        '-x', '0',
-        '-y', '0',
-        '-z', '0.3'
-    ],
-    output='screen'
-)
-
+    # Proper xacro processing (NO os.popen)
+    robot_desc = xacro.process_file(urdf_file).toxml()
 
     return LaunchDescription([
-        robot_state_publisher,
-        gazebo,
-        TimerAction(
-            period=5.0,
-            actions=[spawn_robot]
+
+        # Start Gazebo Harmonic
+        ExecuteProcess(
+            cmd=['gz', 'sim', '-r', 'empty.sdf'],
+            output='screen'
+        ),
+
+        # Spawn robot into Gazebo
+        Node(
+            package='ros_gz_sim',
+            executable='create',
+            arguments=[
+                '-topic', 'robot_description',
+                '-name', 'igvc_bot'
+            ],
+            output='screen'
+        ),
+
+        # Publish joint states
+        Node(
+            package='joint_state_publisher',
+            executable='joint_state_publisher'
+        ),
+
+        # Robot State Publisher
+        Node(
+            package='robot_state_publisher',
+            executable='robot_state_publisher',
+            parameters=[{'robot_description': robot_desc}]
+        ),
+
+        # Bridge
+        Node(
+            package='ros_gz_bridge',
+            executable='parameter_bridge',
+            arguments=[
+                '/cmd_vel@geometry_msgs/msg/Twist@gz.msgs.Twist',
+                '/odom@nav_msgs/msg/Odometry@gz.msgs.Odometry',
+                '/scan@sensor_msgs/msg/LaserScan@gz.msgs.LaserScan',
+                '/imu/data@sensor_msgs/msg/Imu@gz.msgs.IMU'
+            ],
+            output='screen'
         )
     ])
 
