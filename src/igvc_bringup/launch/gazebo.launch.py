@@ -29,7 +29,7 @@ def generate_launch_description():
             arguments=[
                 '-topic', 'robot_description',
                 '-name', 'igvc_bot',
-                '-z', '0.1'
+                '-z', '0.0'
             ],
             output='screen'
         ),
