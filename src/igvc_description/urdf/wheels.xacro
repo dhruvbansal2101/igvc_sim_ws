@@ -40,7 +40,7 @@
       <child link="${name}_link"/>
       <!-- Wheel center at wheel_radius -->
       <origin xyz="${x} ${y} ${wheel_radius}"/>
-      <axis xyz="0 0 1"/>
+      <axis xyz="0 1 0"/>
     </joint>
 
   </xacro:macro>
