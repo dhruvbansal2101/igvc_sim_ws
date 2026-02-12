@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <xacro:macro name="gazebo_plugins">
+
+    <!-- ================= IMU PLUGIN ================= -->
+    <gazebo>
+      <plugin name="imu_plugin" filename="gz-sim-imu-system">
+        <topic>/imu/data</topic>
+        <frame_id>imu_link</frame_id>
+      </plugin>
+    </gazebo>
+
+    <!-- ================= 2D LIDAR PLUGIN ================= -->
+    <gazebo>
+      <plugin name="lidar_plugin" filename="gz-sim-lidar-system">
+        <topic>/scan</topic>
+        <frame_id>lidar_link</frame_id>
+        <update_rate>10</update_rate>
+        <horizontal>
+          <samples>720</samples>
+          <resolution>1</resolution>
+          <min_angle>-3.14159</min_angle>
+          <max_angle>3.14159</max_angle>
+        </horizontal>
+        <range>
+          <min>0.12</min>
+          <max>10.0</max>
+        </range>
+      </plugin>
+    </gazebo>
+
+    <!-- ================= RGB-D CAMERA PLUGIN ================= -->
+    <gazebo>
+      <plugin name="camera_plugin" filename="gz-sim-depth-camera-system">
+        <camera_name>front_camera</camera_name>
+
+        <frame_id>camera_link</frame_id>
+
+        <image_topic>/camera/image_raw</image_topic>
+        <depth_image_topic>/camera/depth/image_raw</depth_image_topic>
+
+        <update_rate>30</update_rate>
+        <horizontal_fov>1.047</horizontal_fov>
+
+        <image>
+          <width>640</width>
+          <height>480</height>
+          <format>R8G8B8</format>
+        </image>
+      </plugin>
+    </gazebo>
+
+  </xacro:macro>
+
+</robot>
