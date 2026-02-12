@@ -7,22 +7,21 @@
   <xacro:property name="wheel_width" value="0.03"/>
   <xacro:property name="wheel_mass" value="1.0"/>
 
-  <xacro:macro name="make_wheel" params="name x y z">
+  <xacro:macro name="make_wheel" params="name x y">
 
     <link name="${name}_link">
-     <visual>
-      <origin xyz="0 0 0" rpy="0 1.5708 0"/>
-      <geometry>
-        <cylinder radius="${wheel_radius}" length="${wheel_width}"/>
-      </geometry>
-      <material name="wheel_orange">
-        <color rgba="1.0 0.25 0.0 1"/>
-      </material>
-    </visual>
-
+      <visual>
+        <origin rpy="1.5708 0 0"/>
+        <geometry>
+          <cylinder radius="${wheel_radius}" length="${wheel_width}"/>
+        </geometry>
+        <material name="wheel_orange">
+          <color rgba="1.0 0.4 0.0 1"/>
+        </material>
+      </visual>
 
       <collision>
-        <origin xyz="0 0 0" rpy="0 1.5708 0"/>
+        <origin rpy="1.5708 0 0"/>
         <geometry>
           <cylinder radius="${wheel_radius}" length="${wheel_width}"/>
         </geometry>
@@ -31,31 +30,26 @@
       <inertial>
         <mass value="${wheel_mass}"/>
         <origin xyz="0 0 0"/>
-        <inertia
-          ixx="0.01"
-          iyy="0.01"
-          izz="0.01"
-          ixy="0.0"
-          ixz="0.0"
-          iyz="0.0"/>
+        <inertia ixx="0.01" iyy="0.01" izz="0.005"
+                 ixy="0.0" ixz="0.0" iyz="0.0"/>
       </inertial>
     </link>
 
     <joint name="${name}_joint" type="continuous">
       <parent link="base_link"/>
       <child link="${name}_link"/>
-      <origin xyz="${x} ${y} ${z}"/>
+      <!-- Wheel center at wheel_radius -->
+      <origin xyz="${x} ${y} ${wheel_radius}"/>
       <axis xyz="0 1 0"/>
-      <limit effort="10.0" velocity="20.0"/>
-      <dynamics damping="0.1" friction="0.0"/>
     </joint>
 
   </xacro:macro>
 
-<xacro:make_wheel name="wheel_fl" x="0.2" y="0.215" z="-0.05"/>
-<xacro:make_wheel name="wheel_fr" x="0.2" y="-0.215" z="-0.05"/>
-<xacro:make_wheel name="wheel_rl" x="-0.2" y="0.215" z="-0.05"/>
-<xacro:make_wheel name="wheel_rr" x="-0.2" y="-0.215" z="-0.05"/>
+  <!-- Slightly outside body width -->
+  <xacro:make_wheel name="wheel_fl" x="0.2"  y="0.25"/>
+  <xacro:make_wheel name="wheel_fr" x="0.2"  y="-0.25"/>
+  <xacro:make_wheel name="wheel_rl" x="-0.2" y="0.25"/>
+  <xacro:make_wheel name="wheel_rr" x="-0.2" y="-0.25"/>
 
 </xacro:macro>
 

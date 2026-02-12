@@ -3,10 +3,8 @@
 
 <xacro:macro name="base">
 
-  <!-- Ground reference -->
   <link name="base_link"/>
 
-  <!-- Chassis -->
   <link name="chassis_link">
     <visual>
       <geometry>
@@ -30,11 +28,11 @@
     </inertial>
   </link>
 
-  <!-- Lift chassis above ground -->
+  <!-- LIFT CHASSIS HALF HEIGHT -->
   <joint name="base_to_chassis" type="fixed">
     <parent link="base_link"/>
     <child link="chassis_link"/>
-    <origin xyz="0 0 0.15"/>
+    <origin xyz="0 0 0.1"/>
   </joint>
 
 </xacro:macro>
