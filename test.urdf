@@ -4,14 +4,12 @@
 <!-- |    EDITING THIS FILE BY HAND IS NOT RECOMMENDED                                 | -->
 <!-- =================================================================================== -->
 <robot name="igvc_bot">
-  <!-- Ground reference -->
-  <link name="base_link"/>
-  <!-- Chassis -->
-  <link name="chassis_link">
+  <link name="base_link">
     <visual>
       <geometry>
         <box size="0.5 0.4 0.2"/>
       </geometry>
+      <origin xyz="0 0 0.15"/>
       <material name="body_color">
         <color rgba="0.15 0.15 0.18 1"/>
       </material>
@@ -20,30 +18,30 @@
       <geometry>
         <box size="0.5 0.4 0.2"/>
       </geometry>
+      <origin xyz="0 0 0.15"/>
     </collision>
     <inertial>
       <mass value="10.0"/>
-      <inertia ixx="0.2" ixy="0.0" ixz="0.0" iyy="0.2" iyz="0.0" izz="0.2"/>
+      <origin xyz="0 0 0.15"/>
+      <inertia ixx="0.2" ixy="0" ixz="0" iyy="0.2" iyz="0" izz="0.2"/>
     </inertial>
   </link>
-  <!-- Lift chassis above ground -->
-  <joint name="base_to_chassis" type="fixed">
-    <parent link="base_link"/>
-    <child link="chassis_link"/>
-    <origin xyz="0 0 0.15"/>
-  </joint>
+  <!-- Correct gazebo tag placement -->
+  <gazebo reference="base_link">
+    <self_collide>false</self_collide>
+  </gazebo>
   <link name="wheel_fl_link">
     <visual>
-      <origin rpy="0 1.5708 0" xyz="0 0 0"/>
+      <origin rpy="1.5708 0 0"/>
       <geometry>
         <cylinder length="0.03" radius="0.05"/>
       </geometry>
       <material name="wheel_orange">
-        <color rgba="1.0 0.25 0.0 1"/>
+        <color rgba="1.0 0.4 0.0 1"/>
       </material>
     </visual>
     <collision>
-      <origin rpy="0 1.5708 0" xyz="0 0 0"/>
+      <origin rpy="1.5708 0 0"/>
       <geometry>
         <cylinder length="0.03" radius="0.05"/>
       </geometry>
@@ -51,29 +49,28 @@
     <inertial>
       <mass value="1.0"/>
       <origin xyz="0 0 0"/>
-      <inertia ixx="0.01" ixy="0.0" ixz="0.0" iyy="0.01" iyz="0.0" izz="0.01"/>
+      <inertia ixx="0.01" ixy="0.0" ixz="0.0" iyy="0.01" iyz="0.0" izz="0.005"/>
     </inertial>
   </link>
   <joint name="wheel_fl_joint" type="continuous">
     <parent link="base_link"/>
     <child link="wheel_fl_link"/>
-    <origin xyz="0.2 0.215 -0.05"/>
+    <!-- Wheel center at wheel_radius -->
+    <origin xyz="0.2 0.21 0.05"/>
     <axis xyz="0 1 0"/>
-    <limit effort="10.0" velocity="20.0"/>
-    <dynamics damping="0.1" friction="0.0"/>
   </joint>
   <link name="wheel_fr_link">
     <visual>
-      <origin rpy="0 1.5708 0" xyz="0 0 0"/>
+      <origin rpy="1.5708 0 0"/>
       <geometry>
         <cylinder length="0.03" radius="0.05"/>
       </geometry>
       <material name="wheel_orange">
-        <color rgba="1.0 0.25 0.0 1"/>
+        <color rgba="1.0 0.4 0.0 1"/>
       </material>
     </visual>
     <collision>
-      <origin rpy="0 1.5708 0" xyz="0 0 0"/>
+      <origin rpy="1.5708 0 0"/>
       <geometry>
         <cylinder length="0.03" radius="0.05"/>
       </geometry>
@@ -81,29 +78,28 @@
     <inertial>
       <mass value="1.0"/>
       <origin xyz="0 0 0"/>
-      <inertia ixx="0.01" ixy="0.0" ixz="0.0" iyy="0.01" iyz="0.0" izz="0.01"/>
+      <inertia ixx="0.01" ixy="0.0" ixz="0.0" iyy="0.01" iyz="0.0" izz="0.005"/>
     </inertial>
   </link>
   <joint name="wheel_fr_joint" type="continuous">
     <parent link="base_link"/>
     <child link="wheel_fr_link"/>
-    <origin xyz="0.2 -0.215 -0.05"/>
+    <!-- Wheel center at wheel_radius -->
+    <origin xyz="0.2 -0.21 0.05"/>
     <axis xyz="0 1 0"/>
-    <limit effort="10.0" velocity="20.0"/>
-    <dynamics damping="0.1" friction="0.0"/>
   </joint>
   <link name="wheel_rl_link">
     <visual>
-      <origin rpy="0 1.5708 0" xyz="0 0 0"/>
+      <origin rpy="1.5708 0 0"/>
       <geometry>
         <cylinder length="0.03" radius="0.05"/>
       </geometry>
       <material name="wheel_orange">
-        <color rgba="1.0 0.25 0.0 1"/>
+        <color rgba="1.0 0.4 0.0 1"/>
       </material>
     </visual>
     <collision>
-      <origin rpy="0 1.5708 0" xyz="0 0 0"/>
+      <origin rpy="1.5708 0 0"/>
       <geometry>
         <cylinder length="0.03" radius="0.05"/>
       </geometry>
@@ -111,29 +107,28 @@
     <inertial>
       <mass value="1.0"/>
       <origin xyz="0 0 0"/>
-      <inertia ixx="0.01" ixy="0.0" ixz="0.0" iyy="0.01" iyz="0.0" izz="0.01"/>
+      <inertia ixx="0.01" ixy="0.0" ixz="0.0" iyy="0.01" iyz="0.0" izz="0.005"/>
     </inertial>
   </link>
   <joint name="wheel_rl_joint" type="continuous">
     <parent link="base_link"/>
     <child link="wheel_rl_link"/>
-    <origin xyz="-0.2 0.215 -0.05"/>
+    <!-- Wheel center at wheel_radius -->
+    <origin xyz="-0.2 0.21 0.05"/>
     <axis xyz="0 1 0"/>
-    <limit effort="10.0" velocity="20.0"/>
-    <dynamics damping="0.1" friction="0.0"/>
   </joint>
   <link name="wheel_rr_link">
     <visual>
-      <origin rpy="0 1.5708 0" xyz="0 0 0"/>
+      <origin rpy="1.5708 0 0"/>
       <geometry>
         <cylinder length="0.03" radius="0.05"/>
       </geometry>
       <material name="wheel_orange">
-        <color rgba="1.0 0.25 0.0 1"/>
+        <color rgba="1.0 0.4 0.0 1"/>
       </material>
     </visual>
     <collision>
-      <origin rpy="0 1.5708 0" xyz="0 0 0"/>
+      <origin rpy="1.5708 0 0"/>
       <geometry>
         <cylinder length="0.03" radius="0.05"/>
       </geometry>
@@ -141,64 +136,75 @@
     <inertial>
       <mass value="1.0"/>
       <origin xyz="0 0 0"/>
-      <inertia ixx="0.01" ixy="0.0" ixz="0.0" iyy="0.01" iyz="0.0" izz="0.01"/>
+      <inertia ixx="0.01" ixy="0.0" ixz="0.0" iyy="0.01" iyz="0.0" izz="0.005"/>
     </inertial>
   </link>
   <joint name="wheel_rr_joint" type="continuous">
     <parent link="base_link"/>
     <child link="wheel_rr_link"/>
-    <origin xyz="-0.2 -0.215 -0.05"/>
+    <!-- Wheel center at wheel_radius -->
+    <origin xyz="-0.2 -0.21 0.05"/>
     <axis xyz="0 1 0"/>
-    <limit effort="10.0" velocity="20.0"/>
-    <dynamics damping="0.1" friction="0.0"/>
   </joint>
   <!-- ================= IMU ================= -->
-  <link name="imu_link">
+  <link name="imu_link"/>
+  <joint name="imu_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="imu_link"/>
+    <origin xyz="0 0 0.30"/>
+  </joint>
+  <gazebo reference="imu_link">
     <sensor name="imu_sensor" type="imu">
       <always_on>true</always_on>
       <update_rate>100</update_rate>
+      <topic>/imu</topic>
     </sensor>
-  </link>
-  <joint name="imu_joint" type="fixed">
-    <parent link="chassis_link"/>
-    <child link="imu_link"/>
-    <origin xyz="0 0 0.12"/>
-  </joint>
+  </gazebo>
   <!-- ================= LIDAR ================= -->
   <link name="lidar_link">
     <visual>
       <geometry>
         <cylinder length="0.05" radius="0.04"/>
       </geometry>
-      <material name="sensor_blue">
-        <color rgba="0.0 0.6 1.0 1"/>
-      </material>
     </visual>
-    <sensor name="lidar_sensor" type="gpu_lidar">
+    <collision>
+      <geometry>
+        <cylinder length="0.05" radius="0.04"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="0.1"/>
+      <inertia ixx="0.0001" ixy="0" ixz="0" iyy="0.0001" iyz="0" izz="0.0001"/>
+    </inertial>
+  </link>
+  <joint name="lidar_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="lidar_link"/>
+    <origin xyz="0.15 0 0.55"/>
+  </joint>
+  <!-- ✅ Stable CPU Ray Lidar (No GPU Crash) -->
+  <gazebo reference="lidar_link">
+    <sensor name="lidar" type="ray">
       <always_on>true</always_on>
       <update_rate>10</update_rate>
+      <visualize>true</visualize>
       <topic>/scan</topic>
-      <lidar>
+      <ray>
         <scan>
           <horizontal>
-            <samples>720</samples>
+            <samples>360</samples>
             <min_angle>-3.14159</min_angle>
             <max_angle>3.14159</max_angle>
           </horizontal>
         </scan>
         <range>
-          <min>0.12</min>
+          <min>0.1</min>
           <max>10.0</max>
         </range>
-      </lidar>
+      </ray>
     </sensor>
-  </link>
-  <joint name="lidar_joint" type="fixed">
-    <parent link="chassis_link"/>
-    <child link="lidar_link"/>
-    <origin xyz="0 0 0.22"/>
-  </joint>
-  <!-- ================= DEPTH CAMERA ================= -->
+  </gazebo>
+  <!-- ================= CAMERA (visual only) ================= -->
   <link name="camera_link">
     <visual>
       <geometry>
@@ -208,22 +214,11 @@
         <color rgba="0.0 1.0 0.3 1"/>
       </material>
     </visual>
-    <sensor name="camera_sensor" type="depth_camera">
-      <always_on>true</always_on>
-      <update_rate>30</update_rate>
-      <camera>
-        <horizontal_fov>1.047</horizontal_fov>
-        <image>
-          <width>640</width>
-          <height>480</height>
-        </image>
-      </camera>
-    </sensor>
   </link>
   <joint name="camera_joint" type="fixed">
-    <parent link="chassis_link"/>
+    <parent link="base_link"/>
     <child link="camera_link"/>
-    <origin xyz="0.27 0 0.15"/>
+    <origin xyz="0.22 0 0.27"/>
   </joint>
   <!-- IMU System -->
   <gazebo>
@@ -240,6 +235,7 @@
       <odom_topic>/odom</odom_topic>
       <odom_frame>odom</odom_frame>
       <base_frame>base_link</base_frame>
+      <publish_tf>true</publish_tf>
       <left_joint>wheel_fl_joint</left_joint>
       <left_joint>wheel_rl_joint</left_joint>
       <right_joint>wheel_fr_joint</right_joint>
