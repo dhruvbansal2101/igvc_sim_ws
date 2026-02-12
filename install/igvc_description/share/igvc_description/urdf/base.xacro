@@ -3,37 +3,33 @@
 
 <xacro:macro name="base">
 
-  <link name="base_link"/>
+<link name="base_link">
 
-  <link name="chassis_link">
-    <visual>
-      <geometry>
-        <box size="0.5 0.4 0.2"/>
-      </geometry>
-      <material name="body_color">
-        <color rgba="0.15 0.15 0.18 1"/>
-      </material>
-    </visual>
+<visual>
+  <geometry>
+    <box size="0.5 0.4 0.2"/>
+  </geometry>
+  <origin xyz="0 0 0.15"/>
+  <material name="body_color">
+    <color rgba="0.15 0.15 0.18 1"/>
+  </material>
+</visual>
 
-    <collision>
-      <geometry>
-        <box size="0.5 0.4 0.2"/>
-      </geometry>
-    </collision>
+<collision>
+  <geometry>
+    <box size="0.5 0.4 0.2"/>
+  </geometry>
+  <origin xyz="0 0 0.15"/>
+</collision>
 
-    <inertial>
-      <mass value="10.0"/>
-      <inertia ixx="0.2" iyy="0.2" izz="0.2"
-               ixy="0.0" ixz="0.0" iyz="0.0"/>
-    </inertial>
-  </link>
+<inertial>
+  <mass value="10.0"/>
+  <origin xyz="0 0 0.15"/>
+  <inertia ixx="0.2" iyy="0.2" izz="0.2"
+           ixy="0" ixz="0" iyz="0"/>
+</inertial>
 
-  <!-- LIFT CHASSIS HALF HEIGHT -->
-  <joint name="base_to_chassis" type="fixed">
-    <parent link="base_link"/>
-    <child link="chassis_link"/>
-    <origin xyz="0 0 0.1"/>
-  </joint>
+</link>
 
 </xacro:macro>
 
