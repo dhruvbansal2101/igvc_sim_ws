@@ -11,18 +11,21 @@ def generate_launch_description():
     pkg_desc = get_package_share_directory('igvc_description')
     urdf_file = os.path.join(pkg_desc, 'urdf', 'robot.xacro')
 
-    # Proper xacro processing (NO os.popen)
     robot_desc = xacro.process_file(urdf_file).toxml()
 
     return LaunchDescription([
 
-        # Start Gazebo Harmonic
         ExecuteProcess(
             cmd=['gz', 'sim', '-r', 'empty.sdf'],
             output='screen'
         ),
 
-        # Spawn robot into Gazebo
+        Node(
+            package='robot_state_publisher',
+            executable='robot_state_publisher',
+            parameters=[{'robot_description': robot_desc}]
+        ),
+
         Node(
             package='ros_gz_sim',
             executable='create',
@@ -33,31 +36,4 @@ def generate_launch_description():
             ],
             output='screen'
         ),
-
-        # Publish joint states
-        Node(
-            package='joint_state_publisher',
-            executable='joint_state_publisher'
-        ),
-
-        # Robot State Publisher
-        Node(
-            package='robot_state_publisher',
-            executable='robot_state_publisher',
-            parameters=[{'robot_description': robot_desc}]
-        ),
-
-        # Bridge
-        Node(
-            package='ros_gz_bridge',
-            executable='parameter_bridge',
-            arguments=[
-                '/cmd_vel@geometry_msgs/msg/Twist@gz.msgs.Twist',
-                '/odom@nav_msgs/msg/Odometry@gz.msgs.Odometry',
-                '/scan@sensor_msgs/msg/LaserScan@gz.msgs.LaserScan',
-                '/imu/data@sensor_msgs/msg/Imu@gz.msgs.IMU'
-            ],
-            output='screen'
-        )
     ])
-
