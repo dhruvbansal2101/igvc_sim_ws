@@ -1,0 +1,37 @@
+-- The C compiler identification is GNU 13.3.0
+-- The CXX compiler identification is GNU 13.3.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Found ament_cmake: 2.5.4 (/opt/ros/jazzy/share/ament_cmake/cmake)
+-- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter 
+-- Configuring done (0.7s)
+-- Generating done (0.0s)
+-- Build files have been written to: /home/dhruv-bansal/igvc_sim_ws/build/igvc_bringup
+-- Install configuration: ""
+-- Installing: /home/dhruv-bansal/igvc_sim_ws/install/igvc_bringup/share/igvc_bringup/launch
+-- Installing: /home/dhruv-bansal/igvc_sim_ws/install/igvc_bringup/share/igvc_bringup/launch/view_robot.launch.xml
+-- Installing: /home/dhruv-bansal/igvc_sim_ws/install/igvc_bringup/share/igvc_bringup/launch/gazebo.launch.py
+-- Installing: /home/dhruv-bansal/igvc_sim_ws/install/igvc_bringup/share/igvc_bringup/launch/view_robot.launch.py
+-- Installing: /home/dhruv-bansal/igvc_sim_ws/install/igvc_bringup/share/ament_index/resource_index/package_run_dependencies/igvc_bringup
+-- Installing: /home/dhruv-bansal/igvc_sim_ws/install/igvc_bringup/share/ament_index/resource_index/parent_prefix_path/igvc_bringup
+-- Installing: /home/dhruv-bansal/igvc_sim_ws/install/igvc_bringup/share/igvc_bringup/environment/ament_prefix_path.sh
+-- Installing: /home/dhruv-bansal/igvc_sim_ws/install/igvc_bringup/share/igvc_bringup/environment/ament_prefix_path.dsv
+-- Installing: /home/dhruv-bansal/igvc_sim_ws/install/igvc_bringup/share/igvc_bringup/environment/path.sh
+-- Installing: /home/dhruv-bansal/igvc_sim_ws/install/igvc_bringup/share/igvc_bringup/environment/path.dsv
+-- Installing: /home/dhruv-bansal/igvc_sim_ws/install/igvc_bringup/share/igvc_bringup/local_setup.bash
+-- Installing: /home/dhruv-bansal/igvc_sim_ws/install/igvc_bringup/share/igvc_bringup/local_setup.sh
+-- Installing: /home/dhruv-bansal/igvc_sim_ws/install/igvc_bringup/share/igvc_bringup/local_setup.zsh
+-- Installing: /home/dhruv-bansal/igvc_sim_ws/install/igvc_bringup/share/igvc_bringup/local_setup.dsv
+-- Installing: /home/dhruv-bansal/igvc_sim_ws/install/igvc_bringup/share/igvc_bringup/package.dsv
+-- Installing: /home/dhruv-bansal/igvc_sim_ws/install/igvc_bringup/share/ament_index/resource_index/packages/igvc_bringup
+-- Installing: /home/dhruv-bansal/igvc_sim_ws/install/igvc_bringup/share/igvc_bringup/cmake/igvc_bringupConfig.cmake
+-- Installing: /home/dhruv-bansal/igvc_sim_ws/install/igvc_bringup/share/igvc_bringup/cmake/igvc_bringupConfig-version.cmake
+-- Installing: /home/dhruv-bansal/igvc_sim_ws/install/igvc_bringup/share/igvc_bringup/package.xml

@@ -1,0 +1,13 @@
+<launch>
+
+  <node
+    pkg="robot_state_publisher"
+    exec="robot_state_publisher"
+    name="robot_state_publisher"/>
+
+  <node
+    pkg="rviz2"
+    exec="rviz2"
+    name="rviz2"/>
+
+</launch>
