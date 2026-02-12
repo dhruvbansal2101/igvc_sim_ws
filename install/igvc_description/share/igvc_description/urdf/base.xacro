@@ -50,10 +50,11 @@
 
     <!-- Fixed joint connecting base_link to chassis -->
     <joint name="base_to_chassis" type="fixed">
-      <parent link="base_link"/>
-      <child link="chassis_link"/>
-      <origin xyz="0 0 0"/>
-    </joint>
+  <parent link="base_link"/>
+  <child link="chassis_link"/>
+  <origin xyz="0 0 0.05"/>
+</joint>
+
 
   </xacro:macro>
 

@@ -28,8 +28,8 @@
           <!-- A simple box: length width height -->
           <box size="0.5 0.4 0.2"/>
         </geometry>
-        <material name="grey">
-          <color rgba="0.6 0.6 0.6 1"/>
+        <material name="body_color">
+          <color rgba="0.2 0.2 0.25 1"/>
         </material>
       </visual>
 
@@ -50,10 +50,11 @@
 
     <!-- Fixed joint connecting base_link to chassis -->
     <joint name="base_to_chassis" type="fixed">
-      <parent link="base_link"/>
-      <child link="chassis_link"/>
-      <origin xyz="0 0 0"/>
-    </joint>
+  <parent link="base_link"/>
+  <child link="chassis_link"/>
+  <origin xyz="0 0 0.05"/>
+</joint>
+
 
   </xacro:macro>
 

@@ -3,31 +3,18 @@
 
   <xacro:macro name="gazebo_plugins">
 
-    <!-- IMU -->
+    <!-- IMU System -->
     <gazebo>
-      <plugin name="imu_plugin"
-              filename="libgz-sim-imu-system.so">
-        <topic>/imu/data</topic>
-        <frame_id>imu_link</frame_id>
-      </plugin>
+      <plugin
+        filename="libgz-sim-imu-system.so"
+        name="gz::sim::systems::Imu"/>
     </gazebo>
 
-    <!-- LIDAR -->
+    <!-- Sensors System (handles lidar + camera) -->
     <gazebo>
-      <plugin name="lidar_plugin"
-              filename="libgz-sim-lidar-system.so">
-        <topic>/scan</topic>
-        <frame_id>lidar_link</frame_id>
-      </plugin>
-    </gazebo>
-
-    <!-- Depth Camera -->
-    <gazebo>
-      <plugin name="camera_plugin"
-              filename="libgz-sim-depth-camera-system.so">
-        <camera_name>front_camera</camera_name>
-        <frame_id>camera_link</frame_id>
-      </plugin>
+      <plugin
+        filename="libgz-sim-sensors-system.so"
+        name="gz::sim::systems::Sensors"/>
     </gazebo>
 
   </xacro:macro>
