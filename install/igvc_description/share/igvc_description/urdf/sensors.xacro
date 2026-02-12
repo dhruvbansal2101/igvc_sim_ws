@@ -9,9 +9,17 @@
   <joint name="imu_joint" type="fixed">
     <parent link="base_link"/>
     <child link="imu_link"/>
-    <!-- slightly above top of body -->
     <origin xyz="0 0 0.30"/>
   </joint>
+
+  <gazebo reference="imu_link">
+    <sensor name="imu_sensor" type="imu">
+      <always_on>true</always_on>
+      <update_rate>100</update_rate>
+      <topic>/imu</topic>
+    </sensor>
+  </gazebo>
+
 
   <!-- ================= LIDAR ================= -->
   <link name="lidar_link">
@@ -28,11 +36,36 @@
   <joint name="lidar_joint" type="fixed">
     <parent link="base_link"/>
     <child link="lidar_link"/>
-    <!-- front-top of robot -->
-    <origin xyz="0.15 0 0.30"/>
+    <origin xyz="0.15 0 0.55"/>
   </joint>
 
-  <!-- ================= CAMERA ================= -->
+  <gazebo reference="lidar_link">
+    <sensor name="lidar_link" type="gpu_lidar">
+      <always_on>true</always_on>
+      <update_rate>10</update_rate>
+      <topic>/scan</topic>
+      <frame_id>lidar_link</frame_id>
+      <visualize>true</visualize>
+<ray>
+  <scan>
+    <horizontal>
+      <samples>360</samples>
+      <min_angle>-3.14159</min_angle>
+      <max_angle>3.14159</max_angle>
+    </horizontal>
+  </scan>
+  <range>
+    <min>0.1</min>
+    <max>10.0</max>
+  </range>
+</ray>
+
+
+    </sensor>
+  </gazebo>
+
+
+  <!-- ================= CAMERA (visual only for now) -->
   <link name="camera_link">
     <visual>
       <geometry>
@@ -47,7 +80,6 @@
   <joint name="camera_joint" type="fixed">
     <parent link="base_link"/>
     <child link="camera_link"/>
-    <!-- slightly forward -->
     <origin xyz="0.22 0 0.27"/>
   </joint>
 

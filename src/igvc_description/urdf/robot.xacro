@@ -25,6 +25,8 @@
     <odom_frame>odom</odom_frame>
     <base_frame>base_link</base_frame>
 
+    <publish_tf>true</publish_tf>
+
     <left_joint>wheel_fl_joint</left_joint>
     <left_joint>wheel_rl_joint</left_joint>
 
@@ -37,8 +39,5 @@
 
   </plugin>
 </gazebo>
-
-
-
 
 </robot>
