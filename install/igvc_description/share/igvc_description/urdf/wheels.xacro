@@ -10,12 +10,16 @@
   <xacro:macro name="make_wheel" params="name x y z">
 
     <link name="${name}_link">
-      <visual>
-        <origin xyz="0 0 0" rpy="1.5708 0 0"/>
-        <geometry>
-          <cylinder radius="${wheel_radius}" length="${wheel_width}"/>
-        </geometry>
-      </visual>
+     <visual>
+      <origin xyz="0 0 0" rpy="1.5708 0 0"/>
+      <geometry>
+        <cylinder radius="${wheel_radius}" length="${wheel_width}"/>
+      </geometry>
+      <material name="wheel_orange">
+        <color rgba="1.0 0.4 0.0 1"/>
+      </material>
+    </visual>
+
 
       <collision>
         <origin xyz="0 0 0" rpy="1.5708 0 0"/>
@@ -47,11 +51,11 @@
     </joint>
 
   </xacro:macro>
-  
-<xacro:make_wheel name="wheel_fl" x="0.2" y="0.18" z="-0.05"/>
-<xacro:make_wheel name="wheel_fr" x="0.2" y="-0.18" z="-0.05"/>
-<xacro:make_wheel name="wheel_rl" x="-0.2" y="0.18" z="-0.05"/>
-<xacro:make_wheel name="wheel_rr" x="-0.2" y="-0.18" z="-0.05"/>
+
+<xacro:make_wheel name="wheel_fl" x="0.2" y="0.23" z="-0.05"/>
+<xacro:make_wheel name="wheel_fr" x="0.2" y="-0.23" z="-0.05"/>
+<xacro:make_wheel name="wheel_rl" x="-0.2" y="0.23" z="-0.05"/>
+<xacro:make_wheel name="wheel_rr" x="-0.2" y="-0.23" z="-0.05"/>
 
 </xacro:macro>
 
