@@ -16,7 +16,7 @@
         <cylinder radius="${wheel_radius}" length="${wheel_width}"/>
       </geometry>
       <material name="wheel_orange">
-        <color rgba="1.0 0.4 0.0 1"/>
+        <color rgba="1.0 0.25 0.0 1"/>
       </material>
     </visual>
 
