@@ -13,7 +13,7 @@
   <xacro:sensors/>
   <xacro:gazebo_plugins/>
 
-  <!-- ================= GAZEBO DIFF DRIVE ================= -->
+<!-- ================= GAZEBO DIFF DRIVE ================= -->
 <gazebo>
   <plugin
     filename="libgz-sim-diff-drive-system.so"
@@ -25,7 +25,10 @@
     <odom_frame>odom</odom_frame>
     <base_frame>base_link</base_frame>
 
+    <!-- 🔥 ADD THESE -->
     <publish_tf>true</publish_tf>
+    <publish_wheel_tf>true</publish_wheel_tf>
+    <publish_joint_state>true</publish_joint_state>
 
     <left_joint>wheel_fl_joint</left_joint>
     <left_joint>wheel_rl_joint</left_joint>
