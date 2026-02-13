@@ -54,6 +54,9 @@ def generate_launch_description():
         '/imu@sensor_msgs/msg/Imu@gz.msgs.IMU',
         '/model/igvc_bot/tf@tf2_msgs/msg/TFMessage@gz.msgs.Pose_V'
     ],
+     remappings=[
+        ('/model/igvc_bot/tf', '/tf')
+    ],
     output='screen'
 )
 
