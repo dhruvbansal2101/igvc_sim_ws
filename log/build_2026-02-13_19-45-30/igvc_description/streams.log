@@ -1,0 +1,49 @@
+[0.015s] Invoking command in '/home/dhruv-bansal/igvc_sim_ws/build/igvc_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/dhruv-bansal/igvc_sim_ws/src/igvc_description -DCMAKE_INSTALL_PREFIX=/home/dhruv-bansal/igvc_sim_ws/install/igvc_description
+[0.125s] -- The C compiler identification is GNU 13.3.0
+[0.223s] -- The CXX compiler identification is GNU 13.3.0
+[0.253s] -- Detecting C compiler ABI info
+[0.416s] -- Detecting C compiler ABI info - done
+[0.442s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.442s] -- Detecting C compile features
+[0.443s] -- Detecting C compile features - done
+[0.464s] -- Detecting CXX compiler ABI info
+[0.721s] -- Detecting CXX compiler ABI info - done
+[0.746s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.747s] -- Detecting CXX compile features
+[0.748s] -- Detecting CXX compile features - done
+[0.757s] -- Found ament_cmake: 2.5.4 (/opt/ros/jazzy/share/ament_cmake/cmake)
+[1.088s] -- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter 
+[1.283s] -- Found ament_lint_auto: 0.17.3 (/opt/ros/jazzy/share/ament_lint_auto/cmake)
+[1.488s] -- Added test 'lint_cmake' to check CMake code style
+[1.497s] -- Added test 'xmllint' to check XML markup files
+[1.498s] -- Configuring done (1.5s)
+[1.513s] -- Generating done (0.0s)
+[1.518s] -- Build files have been written to: /home/dhruv-bansal/igvc_sim_ws/build/igvc_description
+[1.534s] Invoked command in '/home/dhruv-bansal/igvc_sim_ws/build/igvc_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/dhruv-bansal/igvc_sim_ws/src/igvc_description -DCMAKE_INSTALL_PREFIX=/home/dhruv-bansal/igvc_sim_ws/install/igvc_description
+[1.536s] Invoking command in '/home/dhruv-bansal/igvc_sim_ws/build/igvc_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/dhruv-bansal/igvc_sim_ws/build/igvc_description -- -j12 -l12
+[1.669s] Invoked command in '/home/dhruv-bansal/igvc_sim_ws/build/igvc_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/dhruv-bansal/igvc_sim_ws/build/igvc_description -- -j12 -l12
+[1.673s] Invoking command in '/home/dhruv-bansal/igvc_sim_ws/build/igvc_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/dhruv-bansal/igvc_sim_ws/build/igvc_description
+[1.701s] -- Install configuration: ""
+[1.701s] -- Installing: /home/dhruv-bansal/igvc_sim_ws/install/igvc_description/share/igvc_description/urdf
+[1.704s] -- Installing: /home/dhruv-bansal/igvc_sim_ws/install/igvc_description/share/igvc_description/urdf/wheels.xacro
+[1.705s] -- Installing: /home/dhruv-bansal/igvc_sim_ws/install/igvc_description/share/igvc_description/urdf/sensors.xacro
+[1.706s] -- Installing: /home/dhruv-bansal/igvc_sim_ws/install/igvc_description/share/igvc_description/urdf/gazebo_plugins.xacro
+[1.708s] -- Installing: /home/dhruv-bansal/igvc_sim_ws/install/igvc_description/share/igvc_description/urdf/robot.xacro
+[1.710s] -- Installing: /home/dhruv-bansal/igvc_sim_ws/install/igvc_description/share/igvc_description/urdf/base.xacro
+[1.712s] -- Installing: /home/dhruv-bansal/igvc_sim_ws/install/igvc_description/share/igvc_description/urdf/robot.urdf
+[1.713s] -- Installing: /home/dhruv-bansal/igvc_sim_ws/install/igvc_description/share/ament_index/resource_index/package_run_dependencies/igvc_description
+[1.717s] -- Installing: /home/dhruv-bansal/igvc_sim_ws/install/igvc_description/share/ament_index/resource_index/parent_prefix_path/igvc_description
+[1.717s] -- Installing: /home/dhruv-bansal/igvc_sim_ws/install/igvc_description/share/igvc_description/environment/ament_prefix_path.sh
+[1.722s] -- Installing: /home/dhruv-bansal/igvc_sim_ws/install/igvc_description/share/igvc_description/environment/ament_prefix_path.dsv
+[1.722s] -- Installing: /home/dhruv-bansal/igvc_sim_ws/install/igvc_description/share/igvc_description/environment/path.sh
+[1.723s] -- Installing: /home/dhruv-bansal/igvc_sim_ws/install/igvc_description/share/igvc_description/environment/path.dsv
+[1.723s] -- Installing: /home/dhruv-bansal/igvc_sim_ws/install/igvc_description/share/igvc_description/local_setup.bash
+[1.724s] -- Installing: /home/dhruv-bansal/igvc_sim_ws/install/igvc_description/share/igvc_description/local_setup.sh
+[1.724s] -- Installing: /home/dhruv-bansal/igvc_sim_ws/install/igvc_description/share/igvc_description/local_setup.zsh
+[1.724s] -- Installing: /home/dhruv-bansal/igvc_sim_ws/install/igvc_description/share/igvc_description/local_setup.dsv
+[1.725s] -- Installing: /home/dhruv-bansal/igvc_sim_ws/install/igvc_description/share/igvc_description/package.dsv
+[1.730s] -- Installing: /home/dhruv-bansal/igvc_sim_ws/install/igvc_description/share/ament_index/resource_index/packages/igvc_description
+[1.732s] -- Installing: /home/dhruv-bansal/igvc_sim_ws/install/igvc_description/share/igvc_description/cmake/igvc_descriptionConfig.cmake
+[1.733s] -- Installing: /home/dhruv-bansal/igvc_sim_ws/install/igvc_description/share/igvc_description/cmake/igvc_descriptionConfig-version.cmake
+[1.733s] -- Installing: /home/dhruv-bansal/igvc_sim_ws/install/igvc_description/share/igvc_description/package.xml
+[1.783s] Invoked command in '/home/dhruv-bansal/igvc_sim_ws/build/igvc_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/dhruv-bansal/igvc_sim_ws/build/igvc_description

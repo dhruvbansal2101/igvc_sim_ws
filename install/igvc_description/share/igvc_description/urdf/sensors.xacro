@@ -51,30 +51,32 @@
   </joint>
 
   <!-- ✅ Stable CPU Ray Lidar (No GPU Crash) -->
-  <gazebo reference="lidar_link">
-    <sensor name="lidar" type="ray">
-      <always_on>true</always_on>
-      <update_rate>10</update_rate>
-      <visualize>true</visualize>
-      <topic>/scan</topic>
+<gazebo reference="lidar_link">
+  <sensor name="lidar" type="ray">
+    <always_on>true</always_on>
+    <update_rate>30</update_rate>
+    <visualize>true</visualize>
 
-      <ray>
-        <scan>
-          <horizontal>
-            <samples>360</samples>
-            <min_angle>-3.14159</min_angle>
-            <max_angle>3.14159</max_angle>
-          </horizontal>
-        </scan>
+    <topic>scan</topic>
 
-        <range>
-          <min>0.1</min>
-          <max>10.0</max>
-        </range>
-      </ray>
+    <ray>
+      <scan>
+        <horizontal>
+          <samples>360</samples>
+          <min_angle>-3.14159</min_angle>
+          <max_angle>3.14159</max_angle>
+        </horizontal>
+      </scan>
 
-    </sensor>
-  </gazebo>
+      <range>
+        <min>0.1</min>
+        <max>10.0</max>
+      </range>
+    </ray>
+
+  </sensor>
+</gazebo>
+
 
 
   <!-- ================= CAMERA (visual only) ================= -->

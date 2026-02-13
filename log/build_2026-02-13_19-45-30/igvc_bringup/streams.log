@@ -1,0 +1,43 @@
+[0.024s] Invoking command in '/home/dhruv-bansal/igvc_sim_ws/build/igvc_bringup': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/dhruv-bansal/igvc_sim_ws/src/igvc_bringup -DCMAKE_INSTALL_PREFIX=/home/dhruv-bansal/igvc_sim_ws/install/igvc_bringup
+[0.133s] -- The C compiler identification is GNU 13.3.0
+[0.250s] -- The CXX compiler identification is GNU 13.3.0
+[0.281s] -- Detecting C compiler ABI info
+[0.465s] -- Detecting C compiler ABI info - done
+[0.492s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.492s] -- Detecting C compile features
+[0.493s] -- Detecting C compile features - done
+[0.519s] -- Detecting CXX compiler ABI info
+[0.756s] -- Detecting CXX compiler ABI info - done
+[0.779s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.779s] -- Detecting CXX compile features
+[0.780s] -- Detecting CXX compile features - done
+[0.787s] -- Found ament_cmake: 2.5.4 (/opt/ros/jazzy/share/ament_cmake/cmake)
+[1.051s] -- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter 
+[1.501s] -- Configuring done (1.5s)
+[1.508s] -- Generating done (0.0s)
+[1.508s] -- Build files have been written to: /home/dhruv-bansal/igvc_sim_ws/build/igvc_bringup
+[1.521s] Invoked command in '/home/dhruv-bansal/igvc_sim_ws/build/igvc_bringup' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/dhruv-bansal/igvc_sim_ws/src/igvc_bringup -DCMAKE_INSTALL_PREFIX=/home/dhruv-bansal/igvc_sim_ws/install/igvc_bringup
+[1.525s] Invoking command in '/home/dhruv-bansal/igvc_sim_ws/build/igvc_bringup': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/dhruv-bansal/igvc_sim_ws/build/igvc_bringup -- -j12 -l12
+[1.670s] Invoked command in '/home/dhruv-bansal/igvc_sim_ws/build/igvc_bringup' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/dhruv-bansal/igvc_sim_ws/build/igvc_bringup -- -j12 -l12
+[1.674s] Invoking command in '/home/dhruv-bansal/igvc_sim_ws/build/igvc_bringup': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/dhruv-bansal/igvc_sim_ws/build/igvc_bringup
+[1.723s] -- Install configuration: ""
+[1.725s] -- Installing: /home/dhruv-bansal/igvc_sim_ws/install/igvc_bringup/share/igvc_bringup/launch
+[1.726s] -- Installing: /home/dhruv-bansal/igvc_sim_ws/install/igvc_bringup/share/igvc_bringup/launch/view_robot.launch.xml
+[1.726s] -- Installing: /home/dhruv-bansal/igvc_sim_ws/install/igvc_bringup/share/igvc_bringup/launch/gazebo.launch.py
+[1.727s] -- Installing: /home/dhruv-bansal/igvc_sim_ws/install/igvc_bringup/share/igvc_bringup/launch/view_robot.launch.py
+[1.728s] -- Installing: /home/dhruv-bansal/igvc_sim_ws/install/igvc_bringup/share/ament_index/resource_index/package_run_dependencies/igvc_bringup
+[1.731s] -- Installing: /home/dhruv-bansal/igvc_sim_ws/install/igvc_bringup/share/ament_index/resource_index/parent_prefix_path/igvc_bringup
+[1.732s] -- Installing: /home/dhruv-bansal/igvc_sim_ws/install/igvc_bringup/share/igvc_bringup/environment/ament_prefix_path.sh
+[1.736s] -- Installing: /home/dhruv-bansal/igvc_sim_ws/install/igvc_bringup/share/igvc_bringup/environment/ament_prefix_path.dsv
+[1.737s] -- Installing: /home/dhruv-bansal/igvc_sim_ws/install/igvc_bringup/share/igvc_bringup/environment/path.sh
+[1.737s] -- Installing: /home/dhruv-bansal/igvc_sim_ws/install/igvc_bringup/share/igvc_bringup/environment/path.dsv
+[1.737s] -- Installing: /home/dhruv-bansal/igvc_sim_ws/install/igvc_bringup/share/igvc_bringup/local_setup.bash
+[1.738s] -- Installing: /home/dhruv-bansal/igvc_sim_ws/install/igvc_bringup/share/igvc_bringup/local_setup.sh
+[1.738s] -- Installing: /home/dhruv-bansal/igvc_sim_ws/install/igvc_bringup/share/igvc_bringup/local_setup.zsh
+[1.739s] -- Installing: /home/dhruv-bansal/igvc_sim_ws/install/igvc_bringup/share/igvc_bringup/local_setup.dsv
+[1.742s] -- Installing: /home/dhruv-bansal/igvc_sim_ws/install/igvc_bringup/share/igvc_bringup/package.dsv
+[1.744s] -- Installing: /home/dhruv-bansal/igvc_sim_ws/install/igvc_bringup/share/ament_index/resource_index/packages/igvc_bringup
+[1.745s] -- Installing: /home/dhruv-bansal/igvc_sim_ws/install/igvc_bringup/share/igvc_bringup/cmake/igvc_bringupConfig.cmake
+[1.746s] -- Installing: /home/dhruv-bansal/igvc_sim_ws/install/igvc_bringup/share/igvc_bringup/cmake/igvc_bringupConfig-version.cmake
+[1.746s] -- Installing: /home/dhruv-bansal/igvc_sim_ws/install/igvc_bringup/share/igvc_bringup/package.xml
+[1.831s] Invoked command in '/home/dhruv-bansal/igvc_sim_ws/build/igvc_bringup' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/dhruv-bansal/igvc_sim_ws/build/igvc_bringup
