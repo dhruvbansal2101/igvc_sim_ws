@@ -58,11 +58,13 @@
     <visualize>true</visualize>
 
     <topic>scan</topic>
+    <frame_id>lidar_link</frame_id>
 
     <ray>
       <scan>
         <horizontal>
           <samples>360</samples>
+          <resolution>1</resolution>
           <min_angle>-3.14159</min_angle>
           <max_angle>3.14159</max_angle>
         </horizontal>
@@ -71,6 +73,7 @@
       <range>
         <min>0.1</min>
         <max>10.0</max>
+        <resolution>0.01</resolution>
       </range>
     </ray>
 

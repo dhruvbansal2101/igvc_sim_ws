@@ -2,17 +2,17 @@
 <sdf version="1.9">
   <world name="empty">
 
-    <!-- Physics -->
-    <plugin filename="libgz-sim-physics-system.so"
+    <!-- Systems -->
+    <plugin filename="gz-sim-physics-system"
             name="gz::sim::systems::Physics"/>
 
-    <plugin filename="libgz-sim-user-commands-system.so"
+    <plugin filename="gz-sim-user-commands-system"
             name="gz::sim::systems::UserCommands"/>
 
-    <plugin filename="libgz-sim-scene-broadcaster-system.so"
+    <plugin filename="gz-sim-scene-broadcaster-system"
             name="gz::sim::systems::SceneBroadcaster"/>
 
-    <plugin filename="libgz-sim-sensors-system.so"
+    <plugin filename="gz-sim-sensors-system"
             name="gz::sim::systems::Sensors"/>
 
     <!-- Light -->
@@ -20,8 +20,8 @@
       <cast_shadows>true</cast_shadows>
       <pose>0 0 10 0 0 0</pose>
       <diffuse>1 1 1 1</diffuse>
-      <specular>0.5 0.5 0.5 1</specular>
-      <direction>-0.5 0.5 -1</direction>
+      <specular>0.2 0.2 0.2 1</specular>
+      <direction>-0.5 0.1 -1</direction>
     </light>
 
     <!-- Ground Plane -->
@@ -43,6 +43,10 @@
               <size>100 100</size>
             </plane>
           </geometry>
+          <material>
+            <ambient>0.8 0.8 0.8 1</ambient>
+            <diffuse>0.8 0.8 0.8 1</diffuse>
+          </material>
         </visual>
       </link>
     </model>
